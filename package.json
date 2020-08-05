@@ -2,14 +2,33 @@
   "name": "node-api1-project",
   "version": "1.0.0",
   "description": "- Building a RESTful API.\r - Performing CRUD operations.\r - Writing API endpoints.",
-  "main": "index.js",
+  "main": "database.js",
   "dependencies": {
-    "express": "^4.17.1",
-    "shortid": "^2.2.15"
+    "anymatch": "^3.1.1",
+    "clone-response": "^1.0.2",
+    "decompress-response": "^3.3.0",
+    "got": "^9.6.0",
+    "make-dir": "^3.1.0",
+    "mimic-response": "^1.0.1",
+    "minimist": "^1.2.5",
+    "nopt": "^1.0.10",
+    "normalize-url": "^4.5.0",
+    "normalize-path": "^3.0.0",
+    "p-cancelable": "^1.1.0",
+    "picomatch": "^2.2.2",
+    "prepend-http": "^2.0.0",
+    "pupa": "^2.0.1",
+    "readdirp": "^3.4.0",
+    "responselike": "^1.0.2",
+    "semver-diff": "^3.1.1",
+    "shortid": "^2.2.15",
+    "signal-exit": "^3.0.3"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",

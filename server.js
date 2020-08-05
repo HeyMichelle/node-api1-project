@@ -1,12 +1,4 @@
 
-// PUT	/api/users/:id	
-
-// {
-//     id: "a_unique_id", // hint: use the shortid npm package to generate it
-//     name: "Jane Doe", // String, required
-//     bio: "Not Tarzan's Wife, another Jane",  // String, required
-//   }
-
 // Step 1: import dependency from node_module (express) using require()
 const express = require("express")
 
@@ -69,6 +61,7 @@ server.delete("/users/:id", (req, res) => {
 	if (user) {
 		db.deleteUser(req.params.id)
 		res.status(204).end()
+		// use .end() when nothing is returned to make it finish using request and not keep waiting
 		// since we have nothing to return back to the client, send a 204 with an empty response.
 		// 204 just means "success but we have nothing to return".
 	} else {
@@ -78,10 +71,10 @@ server.delete("/users/:id", (req, res) => {
 	}
 })
 
+//Step 11: Puting process and error response for editing method by user id
+
+
 // Step 3: to start, use node server.js in terminal
 server.listen(8080, () => {
     console.log("Server started on port 8080")
 }) 
-
-
-
