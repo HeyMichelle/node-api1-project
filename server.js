@@ -1,5 +1,7 @@
 const express = require('express');
 const server = express();
+const port = 8080;
+
 
 
 // Step 2: import local file for database
@@ -69,7 +71,7 @@ server.post("/api/users", (req, res) => {
 		// bio: req.body.bio,  // String, required
     
     if (!newUser.name || newUser.bio) {
-        res.status(400).json{{ errorMessage: "Please provide a name and a bio for the new user" }}
+        res.status(400).json{ errorMessage: "Please provide a name and a bio for the new user" }
     }
 
     if (newUser) {
@@ -104,6 +106,8 @@ server.delete("/api/users/:id", (req, res) => {
     }
 })
 
+// if not using the dummy data/shortcuts then the expanded version would appear like below. 
+
 // server.delete('/api/users/:id', (req, res) => {
 //     const { id } = req.params;
 //     const found = users.find(user => user.id === id);
@@ -120,7 +124,7 @@ server.delete("/api/users/:id", (req, res) => {
 //     }
 //   })
 
-//Step 11: Puting process and error response for editing method by user id
+//Step 11: Put/Updating using put process and error response for editing method by user id
 server.put("/api/users/:id", (req, res) => {
 	const { id, name, bio } = req.params;
 	const changes = req.body;
@@ -147,6 +151,6 @@ server.put("/api/users/:id", (req, res) => {
 })
 
 
-
-
-module.exports = server;
+server.listen(port, () => {
+    console.log(`Listening on port ${port}`)
+}) 
