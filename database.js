@@ -1,5 +1,5 @@
 let users = [
-	{ id: "1", name: "Jane Doe", bio: "Bike rider"},
+	{ id: "1", name: "Jane Doe", bio: "bike rider"},
 	{ id: "2", name: "John Doe", bio: "dog walker"},
 	{ id: "3", name: "Jack Doe", bio: "computer programmer"},
 ]
@@ -25,7 +25,7 @@ function createUser(data) {
 function updateUser(id, data) {
 	const index = users.findIndex(u => u.id === id)
 	users[index] = {
-		...users[index],
+		...users[index], // at this index
 		...data,
 	}
 	
